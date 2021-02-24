@@ -92,7 +92,7 @@ public class StreamAssignment {
 
         dates = people.stream()
                 .map(p -> p.getDateOfBirth())
-                .collect(Collectors.toCollection(() -> new TreeSet<>()));
+                .collect(Collectors.toCollection(TreeSet::new));
 
         assertNotNull(dates);
         assertTrue(dates instanceof TreeSet);
